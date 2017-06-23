@@ -7,7 +7,7 @@ Github: **https://www.github.com/stephengrider**
 All the code for this course here: **https://github.com/StephenGrider/ReduxCasts**
 
 ### Tooling (Transpile)
-![Tooling example](img\modernJSTooling.PNG)  
+![Tooling example](ReduxSimpleStarter/img/modernJSTooling.PNG)  
 
 Webpack + babel --> transpiles code into `application.js` file that the browser can read
 
