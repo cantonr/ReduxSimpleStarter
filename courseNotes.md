@@ -1,13 +1,14 @@
 ### Contact Info
 Email: **ste.grider@gmail.com**  
 Twitter: **@sg_in_sf**  
-Github: **https://www.github.com/stephengrider**
+Github: **https://www.github.com/stephengrider**  
+Udemy Course: **https://www.udemy.com/react-redux/learn/v4/overview**  
 
 ### Github links
 All the code for this course here: **https://github.com/StephenGrider/ReduxCasts**
 
 ### Tooling (Transpile)
-![Tooling example](ReduxSimpleStarter/img/modernJSTooling.PNG)  
+![Tooling example](/img/modernJSTooling.PNG)  
 
 Webpack + babel --> transpiles code into `application.js` file that the browser can read
 
