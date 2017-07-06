@@ -72,10 +72,85 @@ const App = () => {
 
  ![Sample Site](img\sampleComponents.PNG)
 
-
+##### List of components we will need
 - Search bar will be one component
 - Left video and title/desc bar will be one component  
 - Single right video title will be one component  
 - List of all right video titles will be a component  
 	- **Components can be nested**
 - Component of everything, `index.js` that encapsulates all components
+
+### Export Statements
+- the component you are looking to export must have an export statement at the end defining which component you want to export  
+Ex.  
+
+```js
+import React from 'react';
+
+const SearchBar = () => {
+  return <input />;
+};
+
+export default SearchBar;  //<-- must be included to export to another file
+```
+- when importing into another file, we must specify the actual file reference
+	- Ex. `import SearchBar from './components/search_bar'`;  
+	- `.js` doesn't need to be included since it normally takes those file types  
+- `SearchBar` is called a functional component, one function some info goes in some `JSX` is returned  
+- `'class component'`, when we want a component to have an internal record keeping  
+- every class based component we create must have a defined render method  
+	- the render function must return some `JSX` or you will get an error
+Ex. of a class component:
+
+```js
+import React from 'react';
+
+class SearchBar extends React.Component {
+  render() {
+    return <input />;
+  }
+}
+
+export default SearchBar;
+```
+##### When trying to decide between a functional component and a class component  
+- In general, start off with a functional component and then if you decide you need more functionality/methods, use a class that extends the functionality you need.  
+
+## Handling User Events  
+1) declare an event handler, a function that should be ran any time an event occurs
+2) pass the event handler to the element we want to monitor  
+Ex.
+
+```js
+import React, { Component } from 'react';
+
+class SearchBar extends Component {
+  render() {
+    return <input onChange={this.onInputChange} />;
+  }
+
+  // event handler
+  onInputChange(event) {
+    console.log(event.target.value);
+  }
+}
+
+export default SearchBar;
+```  
+Ex. Using ES6 arrow function
+```js
+import React, { Component } from 'react';
+
+class SearchBar extends Component {
+  render() {
+    return <input onChange={event => console.log(event.target.value)} />;
+  }
+}
+
+export default SearchBar;
+```   
+## Intro to State  
+One of the most difficult things about React to understand
+- `State` - a plain js object that is used to record and react to user Events  
+	- each class based component has its own state object, as soon as the state is changed the component and all its children are re-rendered
+-
