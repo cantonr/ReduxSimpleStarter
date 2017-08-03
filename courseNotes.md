@@ -153,4 +153,24 @@ export default SearchBar;
 One of the most difficult things about React to understand
 - `State` - a plain js object that is used to record and react to user Events  
 	- each class based component has its own state object, as soon as the state is changed the component and all its children are re-rendered
--
+- To change the `state` always user the `this.setState()` method. NEVER use the `this.state.term = event.target.value` or something similar to this.
+##### Controlled component
+- EX.
+```js
+render() {
+	return (
+		<div>
+			<input
+				value={this.state.term} // adding this creates the Controlled component
+				// the value only changes when the state changes
+				onChange={event => this.setState({ term: event.target.value })} />
+		</div>
+	);
+}
+```
+## Review
+- Functional components can include a class based components
+## YouTube Search Response
+- Downwards data flow - only the most parent component is responsible for fetching data
+## Props
+- in the `JSX` you can use some styling elements like you would in HTML, however you must use `className=""` instead of class since those are used for components as well.
